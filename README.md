@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview!
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/apoorva0777/Leetcode/tree/master/0014-longest-common-prefix) |
+| [2816-lexicographically-smallest-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/2816-lexicographically-smallest-palindrome) |
 ## Trie
 |  |
 | ------- |
@@ -31,4 +32,12 @@ Collection of LeetCode questions to ace the coding interview!
 |  |
 | ------- |
 | [0169-majority-element](https://github.com/apoorva0777/Leetcode/tree/master/0169-majority-element) |
+## Two Pointers
+|  |
+| ------- |
+| [2816-lexicographically-smallest-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/2816-lexicographically-smallest-palindrome) |
+## Greedy
+|  |
+| ------- |
+| [2816-lexicographically-smallest-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/2816-lexicographically-smallest-palindrome) |
 <!---LeetCode Topics End-->
