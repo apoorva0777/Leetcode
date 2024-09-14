@@ -9,6 +9,7 @@ Collection of LeetCode questions to ace the coding interview!
 | [0003-longest-substring-without-repeating-characters](https://github.com/apoorva0777/Leetcode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0014-longest-common-prefix](https://github.com/apoorva0777/Leetcode/tree/master/0014-longest-common-prefix) |
 | [0020-valid-parentheses](https://github.com/apoorva0777/Leetcode/tree/master/0020-valid-parentheses) |
+| [0125-valid-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/0125-valid-palindrome) |
 | [2816-lexicographically-smallest-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/2816-lexicographically-smallest-palindrome) |
 ## Trie
 |  |
@@ -38,6 +39,7 @@ Collection of LeetCode questions to ace the coding interview!
 ## Two Pointers
 |  |
 | ------- |
+| [0125-valid-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/0125-valid-palindrome) |
 | [2816-lexicographically-smallest-palindrome](https://github.com/apoorva0777/Leetcode/tree/master/2816-lexicographically-smallest-palindrome) |
 ## Greedy
 |  |
