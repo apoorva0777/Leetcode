@@ -53,4 +53,12 @@ Collection of LeetCode questions to ace the coding interview!
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/apoorva0777/Leetcode/tree/master/0020-valid-parentheses) |
+## Math
+|  |
+| ------- |
+| [0069-sqrtx](https://github.com/apoorva0777/Leetcode/tree/master/0069-sqrtx) |
+## Binary Search
+|  |
+| ------- |
+| [0069-sqrtx](https://github.com/apoorva0777/Leetcode/tree/master/0069-sqrtx) |
 <!---LeetCode Topics End-->
