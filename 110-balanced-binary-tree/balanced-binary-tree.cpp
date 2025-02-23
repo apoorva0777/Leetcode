@@ -11,19 +11,41 @@
  */
 class Solution {
 public:
-    bool isBalanced(TreeNode* root) {
-        return dfs(root)!=-1;
-    }
-    int dfs(TreeNode *root){
-        if(root==NULL)return 0;
-        int left=dfs(root->left);
-        if(left==-1)return -1;
-        int right=dfs(root->right);
-        if(right==-1)return -1;
-        if(abs(left-right)>1){
-            return -1;
+    int getHeight(TreeNode* root) {
+        if(root == NULL) {
+            return 0;
         }
-        return max(left,right)+1;
-        
+        int lh = getHeight(root->left);
+        int rh = getHeight(root->right);
+        int ansHeight = max(lh,rh) + 1;
+        return ansHeight;
+    }
+    bool isBalanced(TreeNode* root) {
+
+        if(root == NULL ) {
+            return true;
+        }
+
+        //current node pr check laga ra hu
+        //1 case solve krra hu 
+        int lh = getHeight(root->left);
+        int rh = getHeight(root->right);
+        int absDiff = abs(lh-rh);
+        bool status = (absDiff <= 1);
+
+        //baaki recursion sambhal lega
+        bool leftAns = isBalanced(root->left);
+        bool rightAns = isBalanced(root->right);
+
+        //i can say whether tree is balanced or not, when
+        //curr node is blanced and 
+        //left subtree is balanced and
+        //right subtree is balanced
+        if(status && leftAns && rightAns) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 };
