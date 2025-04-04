@@ -1,24 +1,19 @@
 class Solution {
 public:
-    bool isalphanumeric(char ch) {
-        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9');
+    bool isPalindrome(string s) {
+        string clean="";
+        for(char c:s){
+            if(isalnum(c)){
+                clean+=tolower(c);
+            }
+        }
+        int n = clean.size();
+        return check(clean, 0, n);
     }
 
-    bool isPalindrome(string s) {
-        int st = 0, end = s.length() - 1;
-        while (st < end) {
-            while (st < end && !isalphanumeric(s[st])) {
-                st++;
-            }
-            while (st < end && !isalphanumeric(s[end])) {
-                end--;
-            }
-            if (tolower(s[st]) != tolower(s[end])) {
-                return false;
-            }
-            st++;
-            end--;
-        }
-        return true;
+    bool check(string &s, int i, int n) {
+        if (i >= n / 2) return true;
+        if (tolower(s[i]) != tolower(s[n - i - 1])) return false;
+        return check(s, i + 1, n);
     }
 };
