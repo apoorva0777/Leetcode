@@ -1,18 +1,54 @@
+// class Solution {
+// public:
+//     void solve(vector<int>& nums,vector<vector<int>>&ans,vector<int>&output,int index){
+//         if(index>=nums.size()){
+//             ans.push_back(output);
+//             return;
+//         }
+//         //exclude
+//         solve(nums,ans,output,index+1);
+
+//         //include
+//         int element=nums[index];
+//         output.push_back(element);
+//         solve(nums,ans,output,index+1);
+//     }
+//     vector<vector<int>> subsets(vector<int>& nums) {
+//         vector<vector<int>>ans;
+//         vector<int>output;
+//         int index=0;
+//         solve(nums,ans,output,index);
+//         return ans;
+//     }
+// };
+
 class Solution {
+private:
+    void solve(vector<int> nums, vector<int> output, int index, vector<vector<int> >& ans) {
+        //base case
+        if(index >= nums.size()) {
+            ans.push_back(output);
+            return ;
+        }
+        
+        //exclude
+        solve(nums, output, index+1, ans);
+        
+        //include
+        int element = nums[index];
+        output.push_back(element);
+        solve(nums, output, index+1, ans);
+        
+    }
+    
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        int n = nums.size();
-        vector<vector<int>> ans;
-
-        for (int i = 0; i < (1 << n); i++) {  // Iterate through all subsets
-            vector<int> subset;
-            for (int num = 0; num < n; num++) { // Check each bit
-                if (i & (1 << num)) { // If bit is set, include nums[num]
-                    subset.push_back(nums[num]);
-                }
-            }
-            ans.push_back(subset);
-        }
+        
+        vector<vector<int> > ans;
+        vector<int> output;
+        int index = 0;
+        solve(nums, output, index, ans);
         return ans;
+        
     }
 };
