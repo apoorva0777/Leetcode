@@ -5,15 +5,15 @@ public:
         for(int i=0;i<s.size();i++){
             hash[s[i]]++;
         }
-        int maxstr=0,minstr=INT_MAX;
+        int maxi=0,mini=INT_MAX;
         for(int i=0;i<126;i++){
             if(hash[i]%2!=0){
-                maxstr=max(maxstr,hash[i]);
+                maxi=max(maxi,hash[i]);
             }
             else if(hash[i]%2==0&&hash[i]>0){
-                minstr=min(minstr,hash[i]);
+                mini=min(mini,hash[i]);
             }
         }
-        return maxstr-minstr;
+        return maxi-mini;
     }
 };
