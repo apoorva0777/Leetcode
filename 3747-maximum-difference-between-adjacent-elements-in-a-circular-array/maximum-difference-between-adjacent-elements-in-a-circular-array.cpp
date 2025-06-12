@@ -7,7 +7,8 @@ public:
         for(int i=0;i<nums.size()-1;i++){
             diff=abs(nums[i+1]-nums[i]);
             cirdiff=abs(nums[nums.size()-1]-nums[0]);
-            maxdiff=max({maxdiff,diff,cirdiff});
+            maxdiff=max(maxdiff,diff);
+            maxdiff=max(maxdiff,cirdiff);
         }
         return maxdiff;
 
