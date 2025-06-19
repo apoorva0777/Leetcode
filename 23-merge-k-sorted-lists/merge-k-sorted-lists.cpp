@@ -22,7 +22,7 @@ public:
 
         ListNode* ln=new ListNode(0);
         ListNode* temp=ln;
-        for(int val:value){
+        for(auto val:value){
             temp->next=new ListNode(val);
             temp=temp->next;
         }
