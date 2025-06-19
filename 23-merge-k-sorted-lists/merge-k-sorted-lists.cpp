@@ -19,13 +19,13 @@ public:
             }
         }
         sort(value.begin(),value.end());
-        ListNode* dummy=new ListNode(0);
-        ListNode* temp=dummy;
+
+        ListNode* ln=new ListNode(0);
+        ListNode* temp=ln;
         for(int val:value){
             temp->next=new ListNode(val);
             temp=temp->next;
         }
-        return dummy->next;
-        
+        return ln->next;
     }
 };
