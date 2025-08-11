@@ -1,32 +1,47 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        int n=matrix.size(),m=matrix[0].size();
-        int srow=0,scol=0,erow=n-1,ecol=m-1;
-        vector<int>ans;
-
-        while(srow<=erow && scol<=ecol){
-            for(int j=scol;j<=ecol;j++){
-                ans.push_back(matrix[srow][j]);
-            }
-            for(int i=srow+1;i<=erow;i++){
-                ans.push_back(matrix[i][ecol]);
-            }
-            for(int j=ecol-1;j>=scol;j--){
-                if(srow==erow){
-                    break;
+        int n = matrix.size();
+        vector<int> result;
+        int r = matrix.size();
+        int c = matrix[0].size();
+        int left = 0;
+        int right = c-1;
+        int top = 0;
+        int down = r-1;
+        int dir = 0;
+        while(top<= down && left <= right){
+            if(dir == 0){
+                for(int i=left; i<= right; i++){
+                    result.push_back(matrix[top][i]);
                 }
-                ans.push_back(matrix[erow][j]);
+                    top++;
             }
-
-            for(int i=erow-1;i>=srow+1;i--){
-                if(scol==ecol){
-                    break;
+                if(dir == 1){
+                    for(int i=top; i<= down; i++){
+                        result.push_back(matrix[i][right]);
+                    }  
+                    right--; 
+                    
                 }
-                ans.push_back(matrix[i][scol]);
-            }
-            srow++; erow--; scol++; ecol--;
+                if(dir == 2){
+                    for(int i= right; i>= left; i--){
+                        result.push_back(matrix[down][i]); 
+                    }
+                    down--;
+                }
+                if(dir == 3){
+                    for(int i=down; i>= top; i--){
+                        result.push_back(matrix[i][left]);
+                    }
+                    left++;
+                }
+                dir++;
+                if(dir == 4){
+                    dir = 0;
+                }
+            
         }
-        return ans;
+        return result;
     }
 };
