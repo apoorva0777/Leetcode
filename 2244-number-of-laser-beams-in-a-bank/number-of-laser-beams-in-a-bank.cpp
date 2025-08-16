@@ -14,15 +14,12 @@ int countocc(string row){
        } 
        int beams=0;
        for(int i=0;i<v.size();i++){
-        int j=i+1;
-        while(j<v.size()){
+        for(int j=i+1;j<v.size();j++){
             beams+=v[i]*v[j];
-            if(v[j]==0){
-                j++;
-        }else{
+            if(v[j]!=0){
             break;
         }
-        }
+       }
        }
        return beams;
     }
