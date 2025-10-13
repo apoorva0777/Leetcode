@@ -1,19 +1,18 @@
 class Solution {
 public:
     vector<string> removeAnagrams(vector<string>& words) {
-        vector<string>srword=words;
-        for(int i=0;i<srword.size();i++){
-            sort(srword[i].begin(),srword[i].end());
-        }
+        vector<string>result;
+        string prev="";
 
-        for(int i=1;i<words.size();){
-            if(srword[i]==srword[i-1]){
-                words.erase(words.begin()+i);
-                srword.erase(srword.begin()+i);
-            }else{
-                i++;
+
+        for(string wrd:words){
+            string sorted=wrd;
+            sort(sorted.begin(),sorted.end());
+            if(prev!=sorted){
+                result.push_back(wrd);
+                prev=sorted;
             }
         }
-        return words;
+        return result;
     }
 };
