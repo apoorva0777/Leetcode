@@ -1,15 +1,18 @@
 class Solution {
-public: 
-    int rob(vector<int>& nums) {
-        int next1=0;
-        int next2=0;
-        for(int i=nums.size()-1;i>=0;i--){
-            int include=nums[i]+next2;
-            int exclude=0+next1;
-            int curr=max(include,exclude);
-            next2=next1;
-            next1=curr;
+public:
+    int t[101];
+    int ans(vector<int>& nums,int i){
+      
+        if(i>=nums.size()){
+            return 0;
         }
-        return next1;
+        if(t[i]!=-1)return t[i];
+        int inc=nums[i]+ans(nums,i+2);
+        int exc=ans(nums,i+1);
+        return t[i]=max(inc,exc);
+    } 
+    int rob(vector<int>& nums) {
+        memset(t,-1,sizeof(t));
+        return ans(nums,0);
     }
 };
